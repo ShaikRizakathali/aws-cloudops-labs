@@ -1,0 +1,36 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowRDSStartStop",
+      "Effect": "Allow",
+      "Action": [
+        "rds:StartDBInstance",
+        "rds:DescribeDBInstances"
+      ],
+      "Resource": "arn:aws:rds:us-east-1:<ACCOUNT_ID>:db:db-cloudops-lab"
+    },
+    {
+      "Sid": "AllowSnapshotCreation",
+      "Effect": "Allow",
+      "Action": [
+        "rds:CreateDBSnapshot",
+        "rds:DescribeDBSnapshots"
+      ],
+      "Resource": [
+        "arn:aws:rds:us-east-1:<ACCOUNT_ID>:db:db-cloudops-lab",
+        "arn:aws:rds:us-east-1:<ACCOUNT_ID>:snapshot:*"
+      ]
+    },
+    {
+      "Sid": "AllowLogging",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:*"
+    }
+  ]
+}

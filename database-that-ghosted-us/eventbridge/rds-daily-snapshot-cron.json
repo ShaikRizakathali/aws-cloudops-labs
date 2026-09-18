@@ -1,0 +1,5 @@
+{
+  "ScheduleExpression": "cron(0 1 * * ? *)",
+  "Description": "Fires daily at 01:00 UTC, targets the create-rds-snapshot Lambda",
+  "Note": "Runs once per day regardless of DB activity; the Lambda itself checks that the instance is 'available' before attempting a snapshot."
+}
