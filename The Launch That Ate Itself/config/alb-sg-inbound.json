@@ -1,0 +1,12 @@
+{
+  "GroupName": "alb-sg",
+  "Description": "Allows HTTP from internet to ALB",
+  "InboundRules": [
+    {
+      "Type": "HTTP",
+      "Protocol": "TCP",
+      "Port": 80,
+      "Source": "0.0.0.0/0"
+    }
+  ]
+}

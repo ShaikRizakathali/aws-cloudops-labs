@@ -1,0 +1,17 @@
+{
+  "AutoScalingGroupName": "webapp-asg",
+  "PolicyType": "TargetTrackingScaling",
+  "TargetTrackingConfiguration": {
+    "PredefinedMetricSpecification": {
+      "PredefinedMetricType": "ASGAverageCPUUtilization"
+    },
+    "TargetValue": 60.0
+  },
+  "EstimatedInstanceWarmup": 60,
+  "GroupSize": {
+    "Min": 1,
+    "Max": 4,
+    "Desired": 1
+  },
+  "Note": "This policy was configured in the ASG creation wizard but silently failed to save (see README Bug #1). It had to be created a second time, manually, from the Automatic Scaling tab after the fact."
+}

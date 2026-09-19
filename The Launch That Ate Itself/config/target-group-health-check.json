@@ -1,0 +1,13 @@
+{
+  "TargetGroupName": "webapp-tg",
+  "Protocol": "HTTP",
+  "Port": 80,
+  "HealthCheck": {
+    "Path": "/",
+    "HealthyThreshold": 2,
+    "UnhealthyThreshold": 2,
+    "TimeoutSeconds": 5,
+    "IntervalSeconds": 15,
+    "Note": "Faster than the 30s default so a real failure is caught within about 30 seconds — this speed is also exactly why the unhealthy-host alarm below originally needed fixing (see README Bug #2)."
+  }
+}

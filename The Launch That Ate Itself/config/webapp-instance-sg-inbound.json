@@ -1,0 +1,19 @@
+{
+  "GroupName": "webapp-instance-sg",
+  "Description": "Allows HTTP from ALB and SSH from my IP",
+  "InboundRules": [
+    {
+      "Type": "HTTP",
+      "Protocol": "TCP",
+      "Port": 80,
+      "Source": "sg-<alb-sg-id>",
+      "Note": "References the ALB's security group by ID, not a CIDR block. Nobody can bypass the load balancer and hit an instance directly."
+    },
+    {
+      "Type": "SSH",
+      "Protocol": "TCP",
+      "Port": 22,
+      "Source": "<your-ip>/32"
+    }
+  ]
+}
